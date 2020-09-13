@@ -55,4 +55,107 @@ ex6는 ie6-7에서 오류가 난다
 바꿀수없다
 값이 변경될수없는것을 Mutable deta type이라고 하는데 바이러스도 Mutable deta type을 이용해서
 유전자의 값을 바꿔 나갑니다.
-constants는 변수값을 바꿀수 없기 때문에 Immutable이라고 부릅니다
+constants는 변수값을 바꿀수 없기 때문에 Immutable이라고 부릅니다.
+
+5. variable types
+primitive 과 object 타입
+primitive = 더이상 작은 단위로 나눠질수없다
+    single item: number, string, boolean, null, undefiedn, symbol
+
+
+object = single item을 한 단위로 한 박스로 나눌수 있다
+
+function, first-class function
+"우리 프로그래밍 언어는 first-class function이 지원이 된다"
+이말은 이 프로그래밍 언어에서는 펀션도 다른 데이터 타입처럼 변수에 할당이 가능하고 
+또 함수의 인자로도 전달이 되고 함수의 return type으로도 function을 return할수있는것이 
+가능하다.그것이 first-class function이라고 부른다.
+
+C언어는 조금더 세세하게 메모리를 관리할수 있다 C언어는 "내가 이정도의 메모리를 할당해야지"
+라는 것이 가능하다 그래서 숫자의 관련된 변수만 보더라도 short, int, long, float, double 굉장히 
+다양한것을 쓸수있다. short, int, long같은 것은 정수를 할당하는것이고
+ float, double은 소수점인 애들을 쓰는것이다. 이것도 내가 얼마나 큰 숫자를 담냐의 따라서
+ short를 쓸건지 int를 쓸건지 사전에 생각을 좀 잘해서 변수를 할당해야 한다 만약에 내가 한 반에 들어갈 학생수 변수를 정할때
+ long을 쓴다는것은 메모리를 낭비한다는거죠 한반에 학생수가 그렇게 많이는 들어가지 않는다는거죠.
+ 그럴때는 short나 int를 쓰는것이 적합합니다. 그렇게 미리 생각해야하는것이 C 언어고요
+
+ 자바도 숫자에만 관련된 데이타 타입이 굉장히 많습니다. 그래서 작성하기 전에 얼마나 큰 양의 데이터를 
+ 생각한 다음에 선언해야하는데요 다.행.히.도
+
+ 자바스크립트는 number이거하나면 숫자는 끝납니다!
+ 얼마나 큰사이즈를 할당할건지 전~혀 생각할필요가 없는것이죠. 그래서 우리 착한 브랜든덕분에 항상 이 number타입만 이용해서 숫자를 
+ 쓰면 되는데요 심지어 자바스크립트에서는 데이타타입을 선언하지 않아도 돼여 왜냐하면
+ 자바스크립트는 type이 다이나믹하게 결정이 돼기때문에 이렇게 let a let b 이렇게 해서 언떤숫자든 할당해주면 그러면 자바스크립트 배운다음에 타입스크립트 배우면
+ 타입스크립트에는 C나 자바처럼 까다로운 type이 더추가되어 지나요? 
+ 아니요 타입스크립트에서도 number 이거하나면 충분합니다! 대신이렇게 number라고 명확하게 명시해서 작성해야합니다
+ 예.
+ let a: number = 12;
+
+ 자바스크에서는 intiger이나 decimal number처럼 정수나 소수점의 숫자등 상관없이 타입은 넘버로 나오게 됩니다
+ 하지만 이 number에서도 이특별한 값이있는데요 숫자를 0으로 나누게 되면 그래프에서 무한대로 나오는데요 그것을 
+ infinity라고 부릅니다 -negative의 value를 0으로 나누게 되면 negativeinfinity값이 나오게 됩니다
+ 그리고 하나더있는데 Not a Number숫자가 아닌경우죠 숫자가 아닌 string을 숫자로 나누게 되면 NaN값이 출력이 됩니다
+ 이값은 특별한 숫자의 값이고 이게 나중에 중요한 이유는 돈요소를 자바스크립트를 이용하여 포지션을 바꾼다던지
+ 뭔가 다양한 계산을 해야할때 이 나누고자 하는 값이 0인지 아닌지 숫자인지 아닌지 확인하지도 않고 이렇게 연산을 바로하면 숫자가 아닌 infinity나 
+ NaN을 받을수 있기 때문에 사용자에게 에러가 발생할수 있습니다 그래서 항상 값을 정할때 확인을 해야합니다
+
+ 넘버에서 넘어가기 전에 자바에서 넘버는 -2**53 ~ 2*53 까지 이정도의 범위의 숫자만 표현이 가능한데 최근에 bigInt라는 타입이 추가되었습니다
+ 그래서 숫자의 제일마지막에 n이라고만 바로 bigInt로 간주되어집니다 그래서 타입이 bigInt로 바뀝니다.
+
+ 6. string
+자바스크립트 한가지의 글자든 여러가지의 글자든 다 string type으로 할당이 됩니다.
+그리고 string과 + 기호를  이용하여 string을 붙이는것도 확인이 됩니다.
+ex.
+const baechu = 'baechu';
+const him = 'hello' + baechu;
+
+7. boolean
+false: 0, null, undefiedn, NaN, ''
+true: 다른 값
+ex.
+const canRead = true;
+const test = 3< 1; // false
+console.log(`value: ${canRead}, type: ${typeof canRead});
+console.log(`value: ${test}, type: ${typeof test});
+
+8. null과 undefiedn
+비슷한것 같지만 다른것임
+null이라고 할당하면 너는 아무것도 아니야 라고 지정할수있다
+
+undefiedn이라는 경우는 선언은 되었지만 아무것도 값이 지정되어있지 않은 것이다
+그래서 undefiedn은 할당이 undefiedn로 되어있을때도 아무것도 할당되어있지 않을때도 undefiedn으로 할당이 되어있다
+
+9. symbol
+심볼은 맵이나 다른 자료에서 고유한식별자가 필요하거나
+동시에 다발적이게 일어날수있는 코드에서 우선순위를 주고싶을때 정말 고유한 식별자가 필요할때 쓰여지는 코드입니다.
+간혹 식별자를 string을 이용해서 쓰는경우가 있는데 string은 다른 모듈이나 다른 파일에서 동일한 string을 썻을때 동일한 식별자로 감지됩니다
+하지만 반대로 symbol같은 경우는 이렇게 동일한 아이디를 이용해서 심볼을 만들었지만 이 두가지의 심볼은 다른경우입니다 
+그래서 만약이거를 동일한지 아닌지 검사를 하려면
+console.log(symbol1 === symbol2);
+코드를입력하고 아닌경우 
+false라고 나옵니다 
+그래서 symbol은 동일한 문자로 만들어졌어도 id가 다르기 때문에 주어지는 string의 상관없이 고유한 식별자를 만들때 사용합니다
+나중에 프로그래밍할때 정말 유용하게 사용할수 있습니다
+똑같은 id의 symbol을 만들려면 
+const Symbol1 = Symbol.for('id')
+const Symbol2 = Symbol.for('id')
+위 코드를 작성해야합니다
+그리고 symbol은 그냥 출력하면 에러가 떠서 출력할때 
+console.log(symbol1.description)
+위 코드를 사용합니다
+
+10. Dynamic typing
+는 벨류의 값에 따라 타입을 자동으로 잡아줍니다 
+프로그래밍 언어에서 인덱싱은 배열했을때는 항상 0부터 인덱슨이 매겨집니다
+let text = 'Hello, World!'
+console.log(text.charAt(0));
+을 입력하면
+H가 출력됩니다
+근데 Dynamic typing 때문에 number type의 벨류를 
+출력하면 에러가 뜹니다 
+그래서 TypeScript가 나오게 됩니다 TypeScript는 자바스크위에 Type이 더 올려진 언어입니다 
+"우리가 자스보다 타입스크립트를 먼저배워야하는게 아닐까여?"
+라고 질문하실것같습니다
+아니요 TypeScript는 자스위에 타입이 올려진 언어라서 우리가 자스를 충분히 배우고 넘어가야합니다
+그리고 자바스크립트는 브라우저가 이해할수있어 실시간으로 연결해서 볼수있지만 TypeScript는 브라우저가 이해할수있는 자스로 트렌스 컴펄러를 이용해야하는데요 이렇게
+실시간으로 볼수있는게 어려워서 일단은 자스를 
