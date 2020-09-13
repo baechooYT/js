@@ -1,0 +1,58 @@
+<javascript>
+
+안될때는 ndm 사이트  : https://developer.mozilla.org/ko/
+js 공식 사이트 : https://www.ecam-international.org
+
+프린트 (콘솔 출력)
+console.log('출력')
+
+2. 변수
+변경될수 있는 값
+ES6에 추가됨
+변수 추가 = let 변수
+만약 let name = 'hello'; 는 변수를 만들고 바로 변수를 hello로 바꾼다
+우리가 let name을 선언하면 포인터가 1가지의 박스를 가르킬수있다
+포인터가 가르치는 어딘가의 메모리에 hello라는 변수를 저장하게 된다
+그리고 name = world 선언하면 메모리에 있던 hello라는 변수가 world로 바뀌게 된다.
+
+3. block scope
+{
+let name = 'hello';
+console.log(name);
+name = 'world';
+console.log(name);
+}
+이런 과로를 이용하여 과로안에 코드를 작성하면 과로 안에있는 코드는 과로 밖에서 보지 못합니다.
+그 말은 
+과로 밖에서
+console.log(name); 을 출력하면 아무값도 출력되지 않습니다
+그리고 과로 밖에있는 변수값은 밖에서도 출력가능합니다 
+ex. 
+let globalName = 'global';
+{
+
+
+
+
+}
+console.log(globalName);
+
+console
+=======================
+global
+=======================
+그리고 글로벌한(과로를 안한) 변수는 끝까지 메모리에 저장되어있기때문에
+글로벌 변수는 많이쓰는걸 추천 안한다.
+글로벌 변수는 과로안에서도 출력된다
+
+var는 오류가 많으니 쓰지말자
+
+ex6는 ie6-7에서 오류가 난다
+
+4. constants
+변수는 포인터가 할당된 어딘가의 박스를 가르키고 있어서 이 포인터를 이용해서
+변수를 바꿀수있는데 constants는 포인터가 잠겨있다 그래서 선언하고나서는 절대로 값을
+바꿀수없다
+값이 변경될수없는것을 Mutable deta type이라고 하는데 바이러스도 Mutable deta type을 이용해서
+유전자의 값을 바꿔 나갑니다.
+constants는 변수값을 바꿀수 없기 때문에 Immutable이라고 부릅니다
